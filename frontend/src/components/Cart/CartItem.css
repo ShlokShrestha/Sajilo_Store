@@ -1,0 +1,8 @@
+.CartItemCard {
+  display: flex;
+  padding: 10px 0;
+  align-items: flex-start;
+}
+.CartItemCard > img {
+  width: 100px;
+}

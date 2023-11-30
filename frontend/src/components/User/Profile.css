@@ -1,0 +1,95 @@
+/* Profile-css */
+.profileContainer {
+  background-color: rgb(231, 231, 231);
+}
+.profileContainer .profileOverview,
+.personalInfo {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 2rem;
+  margin: 1rem;
+}
+.ordersOverView {
+  margin: 1rem;
+  padding: 2rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.profileContainer .profileOverview .profileImg {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: auto;
+}
+.profileContainer .profileOverview .profileImg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* forgot-password-css */
+.Container {
+  width: 100vw;
+  height: 80vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(231, 231, 231);
+}
+.Container .form .form-pw > svg {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.Container .form .form-pw > svg:hover {
+  color: rgb(218, 3, 3);
+}
+.Container .form .form-pw > input {
+  width: 20rem;
+}
+.Container .form .form-email > input {
+  width: 20rem;
+}
+
+/* update-profile */
+.Container .form .form-icons > input {
+  width: 20rem;
+}
+.Container .form .form-icons > svg {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  cursor: pointer;
+}
+.Container .form .form-icons > input {
+  padding-left: 2rem;
+}
+.updateProfileImg > label {
+  cursor: pointer;
+  width: 100%;
+  height: 2rem;
+  margin: auto;
+  text-align: center;
+  padding: 0.2rem;
+  transition: all 0.5s;
+  color: #ffff;
+  background-color: #414141;
+  font-weight: 400;
+}
+.updateProfileImg > label:hover {
+  color: #ffff;
+  background: #22262b;
+}
+.updateProfileImg .prevImg {
+  width: 3rem;
+  height: 2.5rem;
+  overflow: hidden;
+  border-radius: 50px;
+}
+.updateProfileImg .prevImg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

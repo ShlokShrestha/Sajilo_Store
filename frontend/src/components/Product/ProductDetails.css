@@ -1,0 +1,123 @@
+.ProductDetails {
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  max-width: 100%;
+  padding: 6vmax;
+  box-sizing: border-box;
+}
+.product_img {
+  width: 350px;
+}
+.cart-quantity {
+  outline: none;
+  border: none;
+  padding: 0 20px;
+  z-index: 1;
+  text-align: center;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.582);
+}
+.qtnBtn {
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(33, 33, 33);
+}
+.qtnBtn > svg {
+  margin-bottom: 7px;
+}
+.qtnBtn:hover {
+  color: rgba(26, 26, 26, 0.582);
+}
+.line {
+  border-bottom: 1px solid rgba(201, 201, 201, 0.567);
+}
+
+.stock .inStock {
+  margin: auto 0;
+  border: 1px solid green;
+  border-radius: 3px;
+  color: green;
+  background-color: #00800040;
+  padding: 3px 5px;
+  font-weight: 600;
+  font-size: 13px;
+  margin: auto 8px;
+}
+.stock .outStock {
+  margin: auto 0;
+  border: 1px solid red;
+  border-radius: 3px;
+  color: red;
+  background-color: #80000040;
+  padding: 3px 5px;
+  font-weight: 600;
+  font-size: 13px;
+  margin: auto 8px;
+}
+
+.submitReview {
+  border: none;
+  background-color: tomato;
+  font: 500 0.7vmax "Roboto";
+  border-radius: 20px;
+  padding: 0.6vmax 2vmax;
+  margin: 1vmax 0;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+  outline: none;
+}
+.submitReview:hover {
+  background-color: rgb(197, 68, 45);
+  transform: scale(1.1);
+}
+
+.submitDialog {
+  display: flex;
+  flex-direction: column;
+}
+.submitDialogTextArea {
+  border: 1px solid rgba(0, 0, 0, 0.082);
+  margin: 1vmax 0;
+  outline: none;
+  padding: 1rem;
+  font: 300 1rem "Roboto";
+}
+
+.reviewsHeading {
+  color: #000000be;
+  font: 500 1.4vmax "Roboto";
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+  padding: 1vmax;
+  width: 20vmax;
+  margin: auto;
+  margin-bottom: 4vmax;
+}
+.reviews {
+  display: flex;
+  overflow: auto;
+}
+
+.reviewCard {
+  flex: none;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
+  border: 1px solid rgba(56, 56, 56, 0.116);
+  width: 30vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1vmax;
+  padding: 3vmax;
+}
+.reviewCard > img {
+  width: 5vmax;
+}
+.reviewCard > p {
+  color: rgba(0, 0, 0, 0.836);
+  font: 600 0.9vmax "Roboto";
+}
+.reviewCardComment {
+  color: rgba(0, 0, 0, 0.445);
+  font: 300 0.8vmax cursive;
+}

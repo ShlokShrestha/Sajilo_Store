@@ -1,0 +1,10 @@
+.shippingForm > div > input,
+select {
+  width: 100%;
+  padding: 8px 35px;
+  margin: 5px 0;
+}
+.shippingForm > div > input,
+select :focus {
+  outline: none;
+}

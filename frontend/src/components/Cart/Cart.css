@@ -1,0 +1,40 @@
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+.cartPage {
+  height: 100%;
+}
+.cartHeader {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 4fr 2fr 1fr 1fr;
+}
+.cartContainer {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 4fr 2fr 1fr 1fr;
+}
+.cartContainer .remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cartContainer .remove > svg {
+  font-size: 1.8rem;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: rgb(214, 214, 214);
+}
+.cartContainer .remove > svg:hover {
+  background-color: rgb(192, 192, 192);
+}
+.cartTotal {
+  background-color: rgb(241, 241, 241);
+}
