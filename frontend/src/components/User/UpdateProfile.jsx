@@ -111,7 +111,7 @@ const UpdateProfile = () => {
                 </div>
 
                 <button type="submit" className="w-100 mt-3">
-                  Update New Password
+                  Update Profile
                 </button>
               </form>
             </div>

@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
   newProductReducer,
+  newReviewReducer,
   productDetailsReducer,
   productReducer,
   productsReducer,
@@ -35,6 +36,7 @@ const reducer = combineReducers({
   orderDetails: orderDetailReducer,
   allOrders: allOrdersReducer,
   order: orderReducer,
+  newReview: newReviewReducer,
 });
 
 let initialState = {

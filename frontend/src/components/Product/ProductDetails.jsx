@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
-import { clearErrors, getProductDetails } from "../../actions/productAction";
+import {
+  clearErrors,
+  getProductDetails,
+  newReview,
+} from "../../actions/productAction";
 import ReviewCard from "./ReviewCard";
 import Loader from "../layout/Loader/Loader";
 import { addItemsCard } from "../../actions/cartAction";
@@ -10,6 +14,7 @@ import { FaPlus, FaMinus } from "react-icons/fa6";
 import StarRatings from "react-star-ratings";
 import { TiTick } from "react-icons/ti";
 import MetaData from "../layout/MetaData";
+import { NEW_REVIEW_RESET } from "../../contants/productConstants";
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -17,7 +22,13 @@ const ProductDetails = () => {
   const { loading, error, product } = useSelector(
     (state) => state.productDetails
   );
+  const { error: reviewError, success } = useSelector(
+    (state) => state.newReview
+  );
 
+  const [name, setName] = useState("");
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
   const [quantity, setQuantity] = useState(1);
   const increasequantity = () => {
     if (product.Stock <= quantity) return;
@@ -32,13 +43,33 @@ const ProductDetails = () => {
     dispatch(addItemsCard(id, quantity));
     alert("Item is added to cart");
   };
+
+  const reviewHandleSubmit = (e) => {
+    e.preventDefault();
+    const myForm = new FormData();
+    myForm.append("name", name);
+    myForm.append("rating", rating);
+    myForm.append("comment", comment);
+    myForm.append("productId", id);
+    dispatch(newReview(myForm));
+    setRating(0);
+  };
+
   useEffect(() => {
     if (error) {
+      alert(error);
       dispatch(clearErrors());
     }
+    if (reviewError) {
+      alert(reviewError);
+      dispatch(clearErrors());
+    }
+    if (success) {
+      alert("Review submit successfully");
+      dispatch({ type: NEW_REVIEW_RESET });
+    }
     dispatch(getProductDetails(id));
-    dispatch(getProductDetails(id));
-  }, [dispatch, id, error]);
+  }, [dispatch, id, error, reviewError, success, alert]);
   return (
     <>
       <MetaData title={product.name} />
@@ -121,39 +152,63 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          <h4 className="text-center mt-5 mb-2">Products Page</h4>
-          <div className="line w-25 mx-auto my-3 "></div>
-          <div className="row">
-            <div className="col-lg-6">
-              {product.reviews && product.reviews[0] ? (
-                <div className="reviews">
-                  {product.reviews &&
-                    product.reviews.map((review) => (
-                      <ReviewCard key={review._id} review={review} />
-                    ))}
+          <div className="mb-5">
+            <h4 className="text-center mt-5 mb-3">Products Page</h4>
+            <div className="line w-25 mx-auto mb-5 "></div>
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-6 col-md-10 mx-auto">
+                  {product.reviews && product.reviews[0] ? (
+                    <div className="reviews">
+                      {product.reviews &&
+                        product.reviews.map((review) => (
+                          <ReviewCard key={review._id} review={review} />
+                        ))}
+                    </div>
+                  ) : (
+                    <p className="noReviews">No Reviews Yet</p>
+                  )}
                 </div>
-              ) : (
-                <p className="noReviews">No Reviews Yet</p>
-              )}
-            </div>
-            <div className="col-lg-6">
-              <h5>Leave a review</h5>
+                <div className="col-lg-6 col-md-10 mx-auto">
+                  <h5>Leave a review</h5>
 
-              <div className="">
-                <div className="my-3">
-                  Your Rating * :{" "}
-                  <StarRatings
-                    rating={product.ratings}
-                    starRatedColor="#f7941d"
-                    starDimension="18px"
-                    starSpacing="2px"
-                    numberOfStars={5}
-                    name="rating"
-                  />
+                  <form className="my-4" onSubmit={reviewHandleSubmit}>
+                    <div className="my-2">
+                      <input
+                        type="text"
+                        className="w-100 form-control shadow-none"
+                        placeholder="Name*"
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
+                    <div className="my-3 d-flex align-items-center">
+                      <h6 className="mb-0 me-2 fs-5">Your Rating:</h6>
+                      <div className="mb-2">
+                        <StarRatings
+                          rating={rating}
+                          starRatedColor="#f7941d"
+                          starDimension="18px"
+                          starSpacing="2px"
+                          numberOfStars={5}
+                          name="rating"
+                          changeRating={(e) => setRating(e)}
+                        />
+                      </div>
+                    </div>
+                    <div className="my-2">
+                      <textarea
+                        name="textbox"
+                        id=""
+                        cols="30"
+                        rows="20"
+                        className="w-100 form-control shadow-none"
+                        placeholder="Your Review"
+                        onChange={(e) => setComment(e.target.value)}
+                      ></textarea>
+                    </div>
+                    <button className="w-25 my-3 ">Submit</button>
+                  </form>
                 </div>
-                
-                <p>Your Review *</p>
-                <textarea name="textbox" id="" cols="30" rows="10"></textarea>
               </div>
             </div>
           </div>
