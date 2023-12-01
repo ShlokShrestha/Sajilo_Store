@@ -9,8 +9,9 @@ exports.isAuthenitcatedUser = catchAsyncErrors(async (req, res, next) => {
   if (!token) {
     return next(new ErrorHandler("Please login to access this resources", 401));
   }
-  const decodedData = jwt.verify(token, process.env.JWT_SECRET);
-  req.user = await User.findById(decodedData.id); //whenever  we login use can access the user data
+  const decodedData = jwt.verify(token, process.env.JWT_SECRET); //decodedData.id is id set by jwttoken at time of creation
+
+  req.user = await User.findById(decodedData.id); //whenever  we login use can access the user data in backend like id, email ,name
   next();
 });
 

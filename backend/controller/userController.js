@@ -159,6 +159,7 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
   };
+  console.log(req.user.id);
   if (req.body.avatar !== "") {
     const user = await User.findById(req.user.id);
     const imageId = user.avatar.public_id;
