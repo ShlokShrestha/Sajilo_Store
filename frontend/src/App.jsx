@@ -28,6 +28,8 @@ import NewProduct from "./components/Admin/NewProduct.jsx";
 import UpdateProduct from "./components/Admin/UpdateProduct.jsx";
 import OrderList from "./components/Admin/OrderList.jsx";
 import ProcessOrder from "./components/Admin/ProcessOrder.jsx";
+import UserList from "./components/Admin/UserList.jsx";
+import UpdateUser from "./components/Admin/UpdateUser.jsx";
 function App() {
   useEffect(() => {
     WebFont.load({
@@ -269,6 +271,24 @@ function App() {
           element={
             <ProtectRoute>
               <ProcessOrder />
+            </ProtectRoute>
+          }
+        />
+        <Route
+          exact
+          path="/admin/users"
+          element={
+            <ProtectRoute>
+              <UserList />
+            </ProtectRoute>
+          }
+        />
+        <Route
+          exact
+          path="/admin/user/:id"
+          element={
+            <ProtectRoute>
+              <UpdateUser />
             </ProtectRoute>
           }
         />

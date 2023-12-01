@@ -27,17 +27,30 @@ ChartJs.register(
 );
 import { useSelector, useDispatch } from "react-redux";
 import { getAdminProduct, clearErrors } from "../../actions/productAction";
+import { getAllUsers } from "../../actions/userAction";
+import { getAllOrders } from "../../actions/orderAction";
 const Dashboard = () => {
   const dispatch = useDispatch();
   const { products, error } = useSelector((state) => state.products);
-
+  const { users, error: userError } = useSelector((state) => state.allUsers);
+  const { orders, error: orderError } = useSelector((state) => state.allOrders);
   useEffect(() => {
     if (error) {
       alert(error);
       dispatch(clearErrors());
     }
+    if (userError) {
+      alert(userError);
+      dispatch(clearErrors());
+    }
+    if (orderError) {
+      alert(orderError);
+      dispatch(clearErrors());
+    }
     dispatch(getAdminProduct());
-  }, [dispatch, error]);
+    dispatch(getAllUsers());
+    dispatch(getAllOrders());
+  }, [dispatch, error, userError, orderError]);
 
   let outOfStock = 0;
   products &&
@@ -95,13 +108,13 @@ const Dashboard = () => {
                 </Link>
               </div>
               <div className="w-25 h-auto bg-success text-white py-3 px-3 me-4 ">
-                <Link to="/admin/products" className="text-white">
+                <Link to="/admin/users" className="text-white">
                   <div className="d-flex">
                     <FaClipboardUser size={50} />
 
                     <div className="mx-4 ">
                       <h4 className="mb-0">User</h4>
-                      <h5>1234</h5>
+                      <h5>{users && users.length}</h5>
                     </div>
                   </div>
                 </Link>
@@ -112,7 +125,7 @@ const Dashboard = () => {
                     <CiDeliveryTruck size={50} />
                     <div className="mx-3 ">
                       <h4 className="mb-0">Total Order</h4>
-                      <h5>1234</h5>
+                      <h5>{orders && orders.length}</h5>
                     </div>
                   </div>
                 </Link>
