@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteUser, getAllUsers, clearErrors } from "../../actions/userAction";
 import { DELETE_USER_RESET } from "../../contants/userConstants";
+import Navbar from "./Navbar";
 const UserList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -102,10 +103,10 @@ const UserList = () => {
           <div className="bg-light">
             <div className="container-fluid row">
               <div className="col-lg-3">
-                <SiderBar />
+                <Navbar />
               </div>
 
-              <div className="col-lg-9">
+              <div className="col-lg-9 col-md-12 col-12 mt-5">
                 <h3 className="my-4">All User List</h3>
                 <div className="line mb-4"></div>
                 <div className="mt-2">
@@ -115,6 +116,7 @@ const UserList = () => {
                     pagination
                     fixedHeader
                     customStyles={customStyles}
+                    responsive
                   />
                 </div>
               </div>

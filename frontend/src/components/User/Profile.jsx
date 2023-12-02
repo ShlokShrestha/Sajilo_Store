@@ -84,7 +84,7 @@ const Profile = () => {
                         </div>
                       </div>
                       <Link to="/password/update">
-                        <button className="w-50">Change Password</button>
+                        <button className="w-auto">Change Password</button>
                       </Link>
                     </div>
                   </div>

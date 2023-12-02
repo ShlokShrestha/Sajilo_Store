@@ -9,6 +9,7 @@ import {
 } from "../../actions/productAction";
 import { useNavigate, useParams } from "react-router-dom";
 import { UPDATE_PRODUCT_RESET } from "../../contants/productConstants";
+import Navbar from "./Navbar";
 const UpdateProduct = () => {
   const navigate = useNavigate();
   const categories = ["Men", "Women", "Bags", "Shoes", "Accessories", "Kids"];
@@ -92,15 +93,15 @@ const UpdateProduct = () => {
       <div className="bg-light">
         <div className="container-fluid row">
           <div className="col-lg-3">
-            <SiderBar />
+            <Navbar />
           </div>
 
-          <div className="col-lg-9">
+          <div className="col-lg-9 col-md-12 col-12 mt-5">
             <h3 className="my-4">Update Product</h3>
             <div className="line mb-4"></div>
 
             <form
-              className=" w-50 mx-auto bg-white p-4"
+              className=" mx-auto bg-white p-4"
               onSubmit={updateProductSubmitHandler}
             >
               <div className="mb-3">
@@ -179,14 +180,15 @@ const UpdateProduct = () => {
                   <img src={image} alt="Image preview" key={index} />
                 ))}
               </div>
-              <div className="my-3"></div>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                disabled={loading ? true : false}
-              >
-                Submit
-              </button>
+              <div className="my-3 ">
+                <button
+                  type="submit"
+                  className="w-100"
+                  disabled={loading ? true : false}
+                >
+                  Submit
+                </button>
+              </div>
             </form>
           </div>
         </div>

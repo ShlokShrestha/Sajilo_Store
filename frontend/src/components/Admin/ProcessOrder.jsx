@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import Loader from "../layout/Loader/Loader";
 import { UPDATE_ORDERS_RESET } from "../../contants/orderConstants";
+import Navbar from "./Navbar";
 const NewProduct = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -48,10 +49,10 @@ const NewProduct = () => {
       <div className="bg-light">
         <div className="container-fluid row">
           <div className="col-lg-3">
-            <SiderBar />
+            <Navbar />
           </div>
 
-          <div className="col-lg-9">
+          <div className="col-lg-9 col-md-12 col-12 mt-5">
             {loading ? (
               <Loader />
             ) : (

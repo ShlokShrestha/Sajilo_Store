@@ -12,6 +12,7 @@ import { MdOutlineEditNote, MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { DELETE_PRODUCT_RESET } from "../../contants/productConstants";
 import "./admin.css";
+import Navbar from "./Navbar";
 const ProductList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -111,10 +112,10 @@ const ProductList = () => {
           <div className="bg-light">
             <div className="container-fluid row">
               <div className="col-lg-3">
-                <SiderBar />
+                <Navbar />
               </div>
 
-              <div className="col-lg-9">
+              <div className="col-lg-9 col-md-12 col-12 mt-5">
                 <h3 className="my-4">All Product List</h3>
                 <div className="line mb-4"></div>
                 <div className="mt-2">
@@ -124,6 +125,7 @@ const ProductList = () => {
                     pagination
                     fixedHeader
                     customStyles={customStyles}
+                    responsive
                   />
                 </div>
               </div>

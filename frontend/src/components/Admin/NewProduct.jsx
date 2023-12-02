@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, createProduct } from "../../actions/productAction";
 import { useNavigate } from "react-router-dom";
 import { NEW_PRODUCT_RESET } from "../../contants/productConstants";
+import Navbar from "./Navbar";
 const NewProduct = () => {
   const navigate = useNavigate();
   const categories = ["Men", "Women", "Bags", "Shoes", "Accessories", "Kids"];
@@ -66,15 +67,15 @@ const NewProduct = () => {
       <div className="bg-light">
         <div className="container-fluid row">
           <div className="col-lg-3">
-            <SiderBar />
+            <Navbar />
           </div>
 
-          <div className="col-lg-9">
+          <div className="col-lg-9 col-md-12 col-12 mt-5">
             <h3 className="my-4">Add New Product</h3>
             <div className="line mb-4"></div>
 
             <form
-              className=" w-50 mx-auto bg-white p-4 shadow-sm my-3"
+              className="mx-auto bg-white p-4 shadow-sm my-3"
               onSubmit={createProductSubmitHandler}
             >
               <div className="mb-3">
