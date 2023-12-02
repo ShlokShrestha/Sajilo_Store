@@ -12,19 +12,22 @@ import {
 const Navbar = () => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div className="container-fluid">
           <button
-            class="navbar-toggler shadow-none "
+            className="navbar-toggler shadow-none"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#sidebar"
             aria-controls="offcanvasExample"
           >
-            <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+            <span
+              className="navbar-toggler-icon"
+              data-bs-target="#sidebar"
+            ></span>
           </button>
           <a
-            class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
+            className="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
             href="#"
           >
             <span className="fw-bold text-white">SAJILO</span>
@@ -33,14 +36,14 @@ const Navbar = () => {
         </div>
       </nav>
       <div
-        class="offcanvas offcanvas-start sidebar-nav bg-dark"
-        tabindex="-1"
+        className="offcanvas offcanvas-start sidebar-nav bg-dark"
+        tabIndex="-1"
         id="sidebar"
       >
-        <div class="offcanvas-body p-0">
-          <nav class="navbar-dark">
-            <ul class="navbar-nav mt-4">
-              <li className="mb-2"> 
+        <div className="offcanvas-body p-0">
+          <nav className="navbar-dark">
+            <ul className="navbar-nav mt-4">
+              <li className="mb-2">
                 <div class="text-muted small fw-bold text-uppercase px-3">
                   Admin Dashboard
                 </div>

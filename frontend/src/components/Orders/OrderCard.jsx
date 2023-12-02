@@ -34,7 +34,7 @@ const OrderCard = ({ item }) => {
                           item.orderStatus === "Processing" ? "red" : "green",
                       }}
                     >
-                       {item.orderStatus}
+                      {item.orderStatus}
                     </span>
                   </h6>
                 </div>
@@ -60,16 +60,16 @@ const OrderCard = ({ item }) => {
                           <h6 className="my-1">QTN: {item.quantity}</h6>
                           <h6 className="my-1">Price: ${item.price}</h6>
                         </div>
-                        <div className="my-2 d-flex ">
+                        <div className=" d-flex flex-wrap">
                           <button
-                            className="bg-dark text-white fs-6 "
+                            className="bg-dark text-white w-auto my-1"
                             onClick={() => addToCartHandler(item.product, 1)}
                           >
-                            <CgRedo size={25} className="icon me-1 my-auto" />
+                            <CgRedo size={20} className="icon me-1 my-auto" />
                             Buy Again
                           </button>
                           <button
-                            className=" fs-6 ms-2 view-button"
+                            className=" ms-2 view-button w-auto my-1"
                             onClick={() => navigate(`/product/${item.product}`)}
                           >
                             View items

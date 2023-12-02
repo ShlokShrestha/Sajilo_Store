@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import "./index.css";
 import Header from "./components/layout/Header/Header.jsx";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import WebFont from "webfontloader";
