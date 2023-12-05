@@ -15,11 +15,11 @@ offering a diverse range of products and a user-friendly interface.
 - User profile management.
 - Order history and tracking.
 - Admin Dashboard:
-  - User Management:
-    - View and manage user accounts.
-  - Product Management:
+- - Product Management:
     - Add, edit, and delete products.
     - Filter products by category.
+  - User Management:
+    - View and manage user accounts.
   - Order Management:
     - View and manage customer orders.
   - Review Checking:
