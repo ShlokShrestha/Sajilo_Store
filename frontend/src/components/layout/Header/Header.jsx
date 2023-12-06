@@ -57,7 +57,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item mx-3">
-                <Link className="nav-link  text-dark" to="/about">
+                <Link className="nav-link  text-dark" to="/contact">
                   Contact
                 </Link>
               </li>

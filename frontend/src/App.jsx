@@ -30,6 +30,7 @@ import OrderList from "./components/Admin/OrderList.jsx";
 import ProcessOrder from "./components/Admin/ProcessOrder.jsx";
 import UserList from "./components/Admin/UserList.jsx";
 import UpdateUser from "./components/Admin/UpdateUser.jsx";
+import Contact from "./Terms&Conditions/Contact.jsx";
 function App() {
   useEffect(() => {
     WebFont.load({
@@ -52,6 +53,17 @@ function App() {
             <>
               <Header />
               <Home />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/contact"
+          element={
+            <>
+              <Header />
+              <Contact />
               <Footer />
             </>
           }
