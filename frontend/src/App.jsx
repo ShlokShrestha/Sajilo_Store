@@ -31,6 +31,7 @@ import ProcessOrder from "./components/Admin/ProcessOrder.jsx";
 import UserList from "./components/Admin/UserList.jsx";
 import UpdateUser from "./components/Admin/UpdateUser.jsx";
 import Contact from "./Terms&Conditions/Contact.jsx";
+import Aboutus from "./Terms&Conditions/AboutUs.jsx"
 function App() {
   useEffect(() => {
     WebFont.load({
@@ -57,17 +58,7 @@ function App() {
             </>
           }
         />
-        <Route
-          exact
-          path="/contact"
-          element={
-            <>
-              <Header />
-              <Contact />
-              <Footer />
-            </>
-          }
-        />
+
         <Route
           exact
           path="/products"
@@ -75,6 +66,28 @@ function App() {
             <>
               <Header />
               <Product />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/about"
+          element={
+            <>
+              <Header />
+              <Aboutus />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/contact"
+          element={
+            <>
+              <Header />
+              <Contact />
               <Footer />
             </>
           }
