@@ -7,7 +7,7 @@ const AboutUs = () => {
         <img
           src="https://themewagon.github.io/malefashion/img/about/about-us.jpg"
           className="img-fluid"
-          alt=""
+          alt="about.img"
         />
       </div>
       <div className="container py-5">
