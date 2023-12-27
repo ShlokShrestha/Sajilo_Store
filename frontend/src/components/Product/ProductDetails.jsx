@@ -4,6 +4,7 @@ import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   clearErrors,
+  getProduct,
   getProductDetails,
   newReview,
 } from "../../actions/productAction";
@@ -15,6 +16,7 @@ import StarRatings from "react-star-ratings";
 import { TiTick } from "react-icons/ti";
 import MetaData from "../layout/MetaData";
 import { NEW_REVIEW_RESET } from "../../contants/productConstants";
+import ProductCard from "./ProductCard";
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -22,6 +24,7 @@ const ProductDetails = () => {
   const { loading, error, product } = useSelector(
     (state) => state.productDetails
   );
+  const { products } = useSelector((state) => state.products);
   const { error: reviewError, success } = useSelector(
     (state) => state.newReview
   );
@@ -69,7 +72,9 @@ const ProductDetails = () => {
       dispatch({ type: NEW_REVIEW_RESET });
     }
     dispatch(getProductDetails(id));
+    dispatch(getProduct());
   }, [dispatch, id, error, reviewError, success, alert]);
+  console.log(products);
   return (
     <>
       <MetaData title={product.name} />
@@ -153,7 +158,7 @@ const ProductDetails = () => {
           </div>
 
           <div className="mb-5">
-            <h4 className="text-center mt-5 mb-3">Products Page</h4>
+            <h4 className="text-center mt-5 mb-3">Review</h4>
             <div className="line w-25 mx-auto mb-5 "></div>
             <div className="container">
               <div className="row">
@@ -210,6 +215,16 @@ const ProductDetails = () => {
                   </form>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="mb-5">
+            <h4 className="text-center mt-5 mb-3">Feature Product</h4>
+            <div className="line w-25 mx-auto mb-5 "></div>
+            <div className="d-flex flex-wrap justify-content-center ">
+              {products &&
+                products
+                  .slice(0, 3)
+                  .map((item) => <ProductCard key={item._id} product={item} />)}
             </div>
           </div>
         </>
