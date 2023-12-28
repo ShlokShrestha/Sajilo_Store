@@ -74,7 +74,7 @@ const ProductDetails = () => {
     dispatch(getProductDetails(id));
     dispatch(getProduct());
   }, [dispatch, id, error, reviewError, success, alert]);
-  console.log(products);
+  
   return (
     <>
       <MetaData title={product.name} />

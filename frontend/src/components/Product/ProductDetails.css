@@ -27,9 +27,6 @@
 .qtnBtn:hover {
   color: rgba(26, 26, 26, 0.582);
 }
-.line {
-  border-bottom: 1px solid rgba(201, 201, 201, 0.567);
-}
 
 .stock .inStock {
   margin: auto 0;
