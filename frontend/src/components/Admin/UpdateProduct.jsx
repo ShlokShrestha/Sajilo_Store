@@ -12,7 +12,13 @@ import { UPDATE_PRODUCT_RESET } from "../../contants/productConstants";
 import Navbar from "./Navbar";
 const UpdateProduct = () => {
   const navigate = useNavigate();
-  const categories = ["Men", "Women", "Bags", "Shoes", "Accessories", "Kids"];
+  const categories = [
+    "Electronic",
+    "Clothing",
+    "Bags",
+    "Footwear",
+    "Accessories",
+  ];
   const dispatch = useDispatch();
   const {
     loading,
