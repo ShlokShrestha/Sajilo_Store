@@ -82,7 +82,6 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
         await cloudinary.v2.uploader.destroy(product.image[i].public_id);
       }
     }
-
     const imagesLink = [];
     //Now we store publicId and url on imageLink
     for (let i = 0; i < images.length; i++) {
