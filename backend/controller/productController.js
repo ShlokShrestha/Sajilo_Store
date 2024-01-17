@@ -75,7 +75,6 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
     } else {
       images = req.body.images;
     }
-
     //it delete the old image from cloudinary after uploading new image
     if (images !== undefined) {
       for (let i = 0; i < product.image.length; i++) {
