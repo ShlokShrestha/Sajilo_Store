@@ -20,6 +20,7 @@ const ProductList = () => {
   const { error: deleteError, isDeleted } = useSelector(
     (state) => state.product
   );
+  
   useEffect(() => {
     if (error) {
       alert(error);

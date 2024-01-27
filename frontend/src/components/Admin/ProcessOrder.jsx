@@ -26,7 +26,6 @@ const NewProduct = () => {
     myForm.append("status", status);
     dispatch(updateOrder(id, myForm));
   };
-
   useEffect(() => {
     if (error) {
       alert(error);
